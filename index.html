@@ -1,6 +1,6 @@
 <!doctype html>
 
-    <html>
+    <html lang="en">
 
         <head>
             <meta charset="utf-8">
@@ -17,54 +17,53 @@
 
         <body>
             <div class="container">
-                <!-- Intro animation  -->
-                    <div class="first-intro">
-                    <div class="first-intro-text">
-                        <h2 class="hide">
-                            <span class="text">Create</span>
+
+                <!-- Welcome animation  -->
+                <div id="welcome-section" class="welcome-section">
+                    <div class="welcome-section__text-wrapper">
+                        <h2 class="hidden">
+                            <span class="welcome-section__text">Create</span>
                         </h2>
-                        <h2 class="hide">
-                            <span class="text">Innovate</span>
+                        <h2 class="hidden">
+                            <span class="welcome-section__text">Innovate</span>
                         </h2>
-                        <h2 class="hide">
-                            <span class="text">Grow</span>
+                        <h2 class="hidden">
+                            <span class="welcome-section__text">Grow</span>
                         </h2>
-                        <h2 class="hide">
-                            <span class="text">Share</span>
+                        <h2 class="hidden">
+                            <span class="welcome-section__text">Share</span>
                         </h2>
                     </div>
                 </div>
                 <div class="slider"></div>
 
                 <!-- Nav Bar -->
-                    <div id="navbar" class="topnav">
-                        <div class="nav-link">
-                                <a class="nav-link1" href="#welcome-section">About</a>
-                                <a class="nav-link1" href="https://github.com/vantrangaof" target="_blank" rel="noreferrer noopener">Projects</a>
-                                <a class="nav-link1" href="#contact">Contact</a>
-                        </div>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        </div>
+                <nav id="navbar" class="topnav">
+                    <div class="navbar__links">
+                            <a class="navbar__link" href="#intro-section">About</a>
+                            <a class="navbar__link" href="https://github.com/vantrangaof" target="_blank" rel="noreferrer noopener">Projects</a>
+                            <a class="navbar__link" href="#contact">Contact</a>
+                    </div>
+                    <button id="navbar__toggle" class="navbar__toggle-button" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </nav>
 
-                <!-- Welcome Section -->
-                <div class="welcome-section">
-                    <section id="welcome-section">
-                        <h1 class="intro">Hi, I'm Trang</h1>
-                        <div class="type-writer">
-                            <h2>A <span class="txt-type" data-wait="2000"
-                                    data-words='["Content Creator", "Digital Marketer", "UX/UI Designer", "Web Developer"]'></span>
-                            </h2>
-                        </div>
-                        <div id="intro">
-                            <p> Self-study is my hobby and I've learned to code this page by
-                                myself.<br>I love connecting with like-minded people. Are you one of them? </p>
-                                <a href="#projects" id="profile-link"><button type="button"
-                                    class="button explore"><span>Explore</span></button></a>
-                        </div>
-                    </section>
-                </div>
+                <!-- Intro Section -->
+                <section id="intro-section">
+                    <h1 class="intro-section__title">Hi, I'm Trang</h1>
+                    <div class="intro-section__type-animation">
+                        <h2>A <span class="typewriter-effect__text" data-wait="2000"
+                                data-words='["Content Creator", "Digital Marketer", "UX/UI Designer", "Web Developer"]'></span>
+                        </h2>
+                    </div>
+                    <div id="intro">
+                        <p> Self-study is my hobby and I've learned to code this page by
+                            myself.<br>I love connecting with like-minded people. Are you one of them? </p>
+                            <a href="#contact" id="profile-link"><button type="button"
+                                class="primary-button explore"><span>Explore</span></button></a>
+                    </div>
+                </section>
 
                 <!-- Contact Section -->
                 <div id="contact">

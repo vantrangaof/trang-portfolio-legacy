@@ -1,107 +1,77 @@
-// NAV BAR RESPONSIVENESS
+// Nav Bar Responsiveness
 
-function myFunction() {
-    var x = document.getElementById("navbar");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+const navbar = document.getElementById("navbar");
+const navbarToggle = document.getElementById("navbar__toggle");
 
-// TYPEWRITER EFFECT
+navbarToggle.addEventListener("click", () => {
+    navbar.classList.toggle("responsive");
+});
 
-const typeWriter = function (txtElement, words, wait = 2000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.type();
-    this.isDeleting = false;
-}
 
-// Type Method
-typeWriter.prototype.type = function () {
-    // Current Index of Words
-    const current = this.wordIndex % this.words.length;
-    // Get Full Text of the Current Word
-    const fullTxt = this.words[current];
-    // Check if deleting 
-    if (this.isDeleting) {
-        // Remove char
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
 
-    } else {
-        // Add char
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-    // Insert txt Into element
-    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+// Typewritter Effect
 
-    // Initial Type Speed
-    let typeSpeed = 200;
-    if (this.isDeleting) {
-        typeSpeed /= 2;
-    }
-
-    // If The Word Is Complete
-    if (!this.isDeleting && this.txt == fullTxt) {
-        // Pause at the end
-        typeSpeed = this.wait;
-        // Set delete to true
-        this.isDeleting = true;
-    } else if (this.isDeleting & this.txt === "") {
+class TypewriterEffect {
+    constructor(textContainer, words, wait = 2000) {
+        this.textContainer = textContainer;
+        this.words = words;
+        this.text = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
         this.isDeleting = false;
-        // Move to the next word
-        this.wordIndex++;
-        // Pause before start typing
-        typeSpeed = 400;
     }
 
-    setTimeout(() => this.type(), typeSpeed)
+    type() {
+        const currentWord = this.words[this.wordIndex % this.words.length];
+        const isComplete = !this.isDeleting && this.text === currentWord;
+
+        this.text = this.isDeleting
+            ? currentWord.substring(0, this.text.length - 1)
+            : currentWord.substring(0, this.text.length + 1);
+
+        console.log(this.text)
+
+        this.textContainer.innerHTML = `<span class="text">${this.text}</span>`;
+
+        let typeSpeed = this.isDeleting ? 100 : 200; // Speed during delete vs. typing
+
+        if (isComplete) {
+            typeSpeed = this.wait;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.text === "") {
+            this.isDeleting = false;
+            this.wordIndex++;
+            typeSpeed = 400;
+        }
+        requestAnimationFrame(() => setTimeout(() => this.type(), typeSpeed));
+    }
 }
 
-// Init On DOM Load
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    const textContainer = document.querySelector('.typewriter-effect__text');
+    const words = JSON.parse(textContainer.getAttribute('data-words'));
+    const wait = textContainer.getAttribute('data-wait') || 2000;
 
-// Init App
-function init() {
-    const txtElement = document.querySelector('.txt-type');
-    const words = JSON.parse(txtElement.getAttribute('data-words'));
-    const wait = txtElement.getAttribute('data-wait');
-    // Init TypeWriter
-    new typeWriter(txtElement, words, wait);
+    new TypewriterEffect(textContainer, words, wait);
+});
 
-}
 
-// ANIMATION
+
+// Gsap Animation
 
 const tl = gsap.timeline({defaults: {ease: 'power1.out'}});
-
-tl.to('.text', {y: '0%', duration: 1, stagger: 0.5});
-
-tl.to('.slider',{y: "-100%", duration: 1.5, delay: 0.5});
-
-tl.to('.first-intro',{y: "-100%", duration: 1}, "-=1");
-
-tl.fromTo('#navbar', {opacity: 0}, {opacity: 1, duration :1});
-
-tl.fromTo('.welcome-section', {opacity: 0}, {opacity: 1, duration :1}), "-=1";
-
-tl.fromTo('#intro', {opacity: 0}, {opacity: 1, duration :2, delay: 1});
-
-
 let tl2 = gsap.timeline({
-  scrollTrigger: {
-      trigger: "#projects",
-  }
-})
-tl2.from("#projects", {y: 200, opacity: 0, duration: 3})
-
-let tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: "#contact",
     }
 })
+
+tl.to('.welcome-section__text', {y: '0%', duration: 1, stagger: 0.5});
+tl.to('.slider',{y: "-100%", duration: 1.5, delay: 0.5});
+tl.to('#welcome-section',{y: "-100%", duration: 1}, "-=1");
+tl.fromTo('#navbar', {opacity: 0}, {opacity: 1, duration :1});
+tl.fromTo('#intro-section', {opacity: 0}, {opacity: 1, duration :1}), "-=1";
+tl.fromTo('#intro', {opacity: 0}, {opacity: 1, duration :2, delay: 1});
+
 tl2.from("#contact", {y: 200, opacity: 0, duration: 2,stagger: 0.2})
