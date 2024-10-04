@@ -1,0 +1,151 @@
+<!doctype html>
+
+    <html>
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Trang Van's Coding Portfolio</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+                integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+            <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+            <!-- Gsap CDN -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        </head>
+
+        <body>
+            <div class="container">
+                <!-- Intro animation  -->
+                    <div class="first-intro">
+                    <div class="first-intro-text">
+                        <h2 class="hide">
+                            <span class="text">Create</span>
+                        </h2>
+                        <h2 class="hide">
+                            <span class="text">Innovate</span>
+                        </h2>
+                        <h2 class="hide">
+                            <span class="text">Grow</span>
+                        </h2>
+                        <h2 class="hide">
+                            <span class="text">Share</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="slider"></div>
+
+                <!-- Nav Bar -->
+                    <div id="navbar" class="topnav">
+                        <div class="nav-link">
+                                <a class="nav-link1" href="#welcome-section">About</a>
+                                <a class="nav-link1" href="#projects">Projects</a>
+                                <a class="nav-link1" href="#contact">Contact</a>
+                        </div>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        </div>
+
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <section id="welcome-section">
+                        <h1 class="intro">Hi, I'm Trang</h1>
+                        <div class="type-writer">
+                            <h2>A <span class="txt-type" data-wait="2000"
+                                    data-words='["Content Creator", "Digital Marketer", "UX/UI Designer", "Web Developer"]'></span>
+                            </h2>
+                        </div>
+                        <div id="intro">
+                            <p> Self-study is my hobby and I've learned to code this page by
+                                myself.<br>I love connecting with like-minded people. Are you one of them? </p>
+                                <a href="#projects" id="profile-link"><button type="button"
+                                    class="button explore"><span>Explore</span></button></a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Project Section -->
+                <section id="projects">
+                    <h2 id="projects-header">These are my coding projects</h2>
+                    <p> Updating...</p>
+
+                    <div class="projects-grid">
+                        <a href="https://vantrangaof.github.io/random-quote-machine/" target="_blank" class="project-title">
+                            <img src="https://vantrangaof.com/wp-content/uploads/2021/08/random-quote-machine-1.jpg"
+                                class="project-img" alt="Free Code Camp Quote Machine">
+                            <p class="project-title">Random Quote Machine</p>
+                        </a>
+                            <a href="https://vantrangaof.github.io/drum-machine/" target="_blank" class="project-title">
+                                <img src="https://trangvan.w3spaces.com/drum-machine.jpg" class="project-img"
+                                    alt="Free Code Camp Drum Machine">
+                                <p class="project-title">Drum Machine (Desktop)</p>
+                                <a href="https://codepen.io/trangvan/full/dyWVjXg" target="_blank" class="project-title">
+                                    <img src="https://vantrangaof.com/wp-content/uploads/2021/07/rs-product-landing-page-trang.jpg"
+                                        class="project-img" alt="Free Code Camp Product Landing Page">
+                                    <p class="project-title"> Product Landing Page</p>
+                                    <a href="https://vantrangaof.github.io/javascript-calculator/" target="_blank"
+                                        class="project-title">
+                                        <img src="https://raw.githubusercontent.com/vantrangaof/javascript-calculator/main/javascript-calculator.jpg"
+                                            class="project-img" alt="Free Code Camp JavaScript Calculator">
+                                        <p class="project-title">JavaScript Calculator</p>
+
+                                        <a href="https://vantrangaof.github.io/markdown-previewer/" target="_blank"
+                                            class="project-title">
+                                            <img src="https://vantrangaof.com/wp-content/uploads/2021/08/markdown-previewer.jpg"
+                                                class="project-img" alt="Free Code Camp Markdown Previewer">
+                                            <p class="project-title">Markdown Previewer</p>
+                                            <a href="https://codepen.io/trangvan/full/LYyzBWJ" target="_blank"
+                                                class="project-title">
+                                                <img src="https://vantrangaof.com/wp-content/uploads/2021/07/rs-survey-form-trang.jpg"
+                                                    class="project-img" alt="Free Code Camp Survey Form">
+                                                <p class="project-title"> Survey Form</p>
+                                                <a href="https://codepen.io/trangvan/full/ZEKXjLy" target="_blank"
+                                                    class="project-title">
+                                                    <img src="https://vantrangaof.com/wp-content/uploads/2021/07/rs-technical-page-trang.jpg"
+                                                        class="project-img" alt="Technical Documentation">
+                                                    <p class="project-title"> Technical Documentation</p>
+                                                    <a href="https://codepen.io/trangvan/full/jOmGpmM" target="_blank"
+                                                        class="project-title">
+                                                        <img src="https://vantrangaof.com/wp-content/uploads/2021/07/rs-tribute-page-trang.jpg"
+                                                            class="project-img" alt="Free Code Camp Tribute Page">
+                                                        <p class="project-title"> Tribute Page </p>
+                    </div>
+
+                    <a href="https://codepen.io/collection/rxVVGk" target="_blank" id="profile-link"><button type="button"
+                            class="button"><span>View All</span></button></a>
+                </section>
+
+                <!-- Contact Section -->
+                <div id="contact">
+                    <section class="contact-section">
+                        <div class="contact-header">
+                            <h2>Let's connect and exchange knowledge</h2>
+                        </div>
+                        <div class="contact-links">
+                            <a href="https://www.facebook.com/trang.van.142/" target="_blank" class="contact-details"><i
+                                    class="fab fa-facebook-square"></i>Facebook</a>
+                            <a href="https://www.instagram.com/vantrangaof/" target="_blank" class="contact-details"><i
+                                    class="fab fa-instagram"></i>Instagram</a>
+                            <a href="https://vantrangaof.com" target="_blank" class="contact-details"><i
+                                    class="fas fa-globe"></i>Website</a>
+                            <a href="https://github.com/vantrangaof" target="_blank" class="contact-details"><i
+                                    class="fab fa-github"></i>Github</a>
+                    </section>
+                </div>
+
+            </div>
+
+            <!-- Footer Section -->
+            <footer>
+                <p>
+                    &copy;
+                    <a href="https://vantrangaof.com" target="_blank"> <i>Copyright 2021, Truong Thi Van Trang</i> </a>
+                </p>
+            </footer>
+
+        <script src="main.js"></script>
+        </body>
+
+    </html>
