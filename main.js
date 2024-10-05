@@ -12,10 +12,10 @@ navbarToggle.addEventListener("click", () => {
 // Typewritter Effect
 
 class TypewriterEffect {
-    constructor(textContainer, words, wait = 2000) {
+    constructor(textContainer, wordList, wait = 2000) {
         this.textContainer = textContainer;
-        this.words = words;
         this.text = '';
+        this.wordList = wordList;
         this.wordIndex = 0;
         this.wait = parseInt(wait, 10);
         this.type();
@@ -23,14 +23,12 @@ class TypewriterEffect {
     }
 
     type() {
-        const currentWord = this.words[this.wordIndex % this.words.length];
+        const currentWord = this.wordList[this.wordIndex % this.wordList.length];
         const isComplete = !this.isDeleting && this.text === currentWord;
 
         this.text = this.isDeleting
             ? currentWord.substring(0, this.text.length - 1)
             : currentWord.substring(0, this.text.length + 1);
-
-        console.log(this.text)
 
         this.textContainer.innerHTML = `<span class="text">${this.text}</span>`;
 
@@ -50,10 +48,10 @@ class TypewriterEffect {
 
 document.addEventListener('DOMContentLoaded', () => {
     const textContainer = document.querySelector('.typewriter-effect__text');
-    const words = JSON.parse(textContainer.getAttribute('data-words'));
+    const wordList = JSON.parse(textContainer.getAttribute('data-words'));
     const wait = textContainer.getAttribute('data-wait') || 2000;
 
-    new TypewriterEffect(textContainer, words, wait);
+    new TypewriterEffect(textContainer, wordList, wait);
 });
 
 
@@ -61,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Gsap Animation
 
 const tl = gsap.timeline({defaults: {ease: 'power1.out'}});
-let tl2 = gsap.timeline({
+const tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: "#contact",
     }
