@@ -7,3 +7,5 @@ While it may not be flawless, it represents a pivotal milestone in my career - o
 
 I realized that I had never maintained a repository for it! Yes, in the early days, I don't even know what GitHub is.
 So here it is - updated in 2024 with some refactoring.
+
+You can view my legacy portfolio [here](https://github.com/vantrangaof/trang-portfolio-legacy)
